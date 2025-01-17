@@ -31,11 +31,11 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    '750a-104-28-205-22.ngrok-free.app'
+    '3f9f-104-28-205-22.ngrok-free.app'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://750a-104-28-205-22.ngrok-free.app',
+    'https://3f9f-104-28-205-22.ngrok-free.app',
     'http://127.0.0.1',
     'http://localhost'
 ]
@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',
+    'coupons.apps.CouponsConfig',
 ]
 
 MIDDLEWARE = [
@@ -149,7 +150,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-CART_SESSION_ID = 'cart'
+CART_SESSION_ID = os.getenv('CART_SESSION_ID')
 
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
